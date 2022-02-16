@@ -2,7 +2,7 @@
 
 namespace Overtrue\LaravelFavorite\Traits;
 
-use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
@@ -97,7 +97,7 @@ trait Favoriter
         return $returnFirst ? $favoriteables->first() : ($toArray ? $favoriteables->all() : $favoriteables);
     }
 
-    public function getFavoriteItems(Model $model): Builder
+    public function getFavoriteItems(Builder $model)
     {
         return app($model)->whereHas(
             'favoriters',
