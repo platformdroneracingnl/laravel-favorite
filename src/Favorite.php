@@ -2,7 +2,7 @@
 
 namespace Overtrue\LaravelFavorite;
 
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Overtrue\LaravelFavorite\Events\Favorited;
