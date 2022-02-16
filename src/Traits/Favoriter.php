@@ -97,7 +97,7 @@ trait Favoriter
         return $returnFirst ? $favoriteables->first() : ($toArray ? $favoriteables->all() : $favoriteables);
     }
 
-    public function getFavoriteItems(string $model): Builder
+    public function getFavoriteItems(string $model): EloquentBuilder
     {
         return app($model)->whereHas(
             'favoriters',
